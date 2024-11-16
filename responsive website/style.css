@@ -6,6 +6,14 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+body {
+  background-color: var(--white);
+  color: var(--black-coral);
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -23,6 +31,9 @@ header .navbar {
   margin: 0 auto;
   height: 70px;
   position: relative;
+}
+html {
+  scroll-behavior: smooth;
 }
 .navbar .logo {
   display: flex;
@@ -224,7 +235,7 @@ header .navbar {
 /* Add margin-top for wide screens */
 @media (min-width: 769px) {
   .about-content {
-    margin-top: 150px; /* Added margin for wide screens */
+    margin-top: 80px; /* Added margin for wide screens */
   }
 }
 
@@ -269,6 +280,52 @@ header .navbar {
   justify-content: center;
   align-items: center;
 }
+
+
+/*-----------------------------------*\
+  #SERVICE
+\*-----------------------------------*/
+
+.service { text-align: center; }
+
+.service .section-title { margin-block-end: 50px; }
+
+.service-card {
+  padding: 40px;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-6);
+}
+
+.service-card .card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--violet-blue-crayola);
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  font-size: 2.5rem;
+  border-radius: var(--radius-circle);
+  margin-inline: auto;
+}
+
+.service-card .card-icon ion-icon { --ionicon-stroke-width: 50px; }
+
+.service-card .card-title { margin-block: 16px 10px; }
+
+.service-card .btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-block-start: 10px;
+  color: var(--violet-blue-crayola);
+  font-weight: var(--fw-700);
+  transition: var(--transition-1);
+}
+
+.service-card .btn-text:is(:hover, :focus-visible) { opacity: 0.9; }
+
+
 /* Contact Section */
 .contact-section {
     display: flex;
@@ -350,52 +407,109 @@ header .navbar {
     cursor: pointer;
 }
 
-.location-info {
-    color: #333;
-    padding-top: 20px;
+* Footer */
+footer {
+  background: #303ef7;
+  color: white;
+  padding: 2rem 5%;
+  justify-content: space-around;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  justify-content: space-around;
+}
+
+.footer-logo {
+  flex: 1;
+}
+
+.footer p {
+  flex: 100;
+  display: flex;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+  flex: 1;
+  margin: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+ align-items: center;
+}
+
+.footer-links li {
+  margin: 0.5rem 0;
+  margin-left: 20px;
+  justify-content: center;
+}
+
+.footer-links a,
+.footer-contact p,
+.footer-social a {
+  color: var(--white);
+  text-decoration: none;
+  justify-content: center;
+}
+
+
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #fff;
+}
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      display: flex;
+      
+  }
+  .footer p {
+    flex: 100;
+    display: flex;
+  }
+  .footer-contact{
+    
     text-align: left;
+}
+}
+.location-info {
+  color: #333;
+  padding-top: 20px;
+  text-align: center;
+ font-size: larger;
+ font-weight: bolder;
+
+
 }
 
 .location-info h4 {
-    font-size: 16px;
-    font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .location-info p a {
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.error-message {
-    color: #ff6666;
-    font-size: 12px;
-    margin-top: 4px;
+.location-section {
+  display: flex;
+  flex-direction: column;
 }
 
-.error-border {
-    border-color: #ff6666;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .contact-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-}
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: #fff;
-}
-
-/* Add this to your style.css */
-.responsive-image {
-    width: 100%;
-    height: auto;
+.map-container {
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
 }
